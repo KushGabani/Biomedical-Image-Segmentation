@@ -55,3 +55,16 @@ python ./create_patches.py <dataset_root_directory> <patch_size>
 python3 ./create_patches.py <dataset_root_directory> <patch_size>
 ```
 A patch size of 256 x 256 is used if not specified.
+
+## 🎡 Preprocessing the data
+Preprocessed data is too large to be uploaded to the github repository, hence you will have to preprocess locally
+
+Once the dataset is downloaded and the patches are created, you can now execute the `data_preprocessor.py` script to preprocess and save the data in a numpy compressed file format.
+```shell
+(For Windows)
+python ./data_preprocessor.py
+  
+(For Mac/Linux)
+python3 ./data_preprocessor.py
+```
+The `.npz` files can be found in the root directory of the project with the filename `preprocessed_data.npz`
