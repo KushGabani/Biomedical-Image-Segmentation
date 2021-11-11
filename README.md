@@ -68,3 +68,13 @@ python ./data_preprocessor.py
 python3 ./data_preprocessor.py
 ```
 The `.npz` files can be found in the root directory of the project with the filename `preprocessed_data.npz`
+
+## 🎋 Visualize Preprocessed Samples
+You can now visualize the preprocessed data by executing the `plot_samples.py` script.
+```shell
+(For Windows)
+python ./plot_samples.py
+
+(For Mac/Linux)
+python3 ./plot_samples.py
+```
