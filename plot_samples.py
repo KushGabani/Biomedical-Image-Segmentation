@@ -17,9 +17,9 @@ def get_random_samples(_samples=1, phase="test"):
 def plot_data_pair(X, y):
     plt.figure(figsize=(12, 6))
     plt.subplot(121)
-    plt.imshow(np.reshape(X, (256, 256)), cmap='gray')
+    plt.imshow(X, cmap='gray')
     plt.subplot(122)
-    plt.imshow(np.reshape(y, (256, 256)), cmap='gray')
+    plt.imshow(y, cmap='gray')
     plt.show()
 
 
@@ -33,8 +33,8 @@ def plot_n_pairs(n=3):
     fig, axes = plt.subplots(n, 2)
     for i in range(n):
         X, y = pairs[i]
-        axes[i][0].imshow(np.reshape(X, (256, 256)), cmap='gray')
-        axes[i][1].imshow(np.reshape(y, (256, 256)), cmap='gray')
+        axes[i][0].imshow(X, cmap='gray')
+        axes[i][1].imshow(y, cmap='gray')
         for j in range(2):
             axes[i][j].set_xticks([])
             axes[i][j].set_yticks([])
