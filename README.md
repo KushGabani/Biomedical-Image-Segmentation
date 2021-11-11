@@ -6,7 +6,7 @@
 
 Pixel-level classification using a U-Net architecture for Biomedical Image Segmentation of Mitochondria
 
-### The Dataset
+## 💎 The Dataset
 For the `create_patches.py` script to run as expected, make sure you download the sub-volumes (including groundtruth sub-volumes) for both training and testing as our dataset.
 
 You can download the dataset from [EPFL](https://www.epfl.ch/labs/cvlab/data/data-em/)
@@ -55,6 +55,16 @@ python ./create_patches.py <dataset_root_directory> <patch_size>
 python3 ./create_patches.py <dataset_root_directory> <patch_size>
 ```
 A patch size of 256 x 256 is used if not specified.
+
+## 🏭 Data Generator
+The `data_generator.py` facilitates the creation of a custom data generator using `tf.keras.utils.Sequence`. This is encouraged to use in contrast to the `data_preprocessor.py` file if your local system could not afford to process the entire dataset at once. The Data Generator will read and preprocess images in batches during training at runtime.
+
+Instantiate a `DataGenerator` object for both training and validation.
+```python
+from data_generator import DataGenerator
+train_generator = DataGenerator(batch_size=16, data_dir="./data/", shuffle=True, phase='train', test_size=0.1)
+validation_generator = DataGenerator(batch_size=16, data_dir="./data/", shuffle=False, phase='test', test_size=0.1)
+```
 
 ## 🎡 Preprocessing the data
 Preprocessed data is too large to be uploaded to the GitHub repository, hence you will have to preprocess locally. If you don't want to preprocess the data beforehand, you can use the `data_generator.py` that will provide a `DataGenerator` for `model.fit()`
