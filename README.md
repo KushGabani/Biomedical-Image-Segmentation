@@ -78,3 +78,9 @@ python ./plot_samples.py
 (For Mac/Linux)
 python3 ./plot_samples.py
 ```
+
+![Sample data plots](sample_preprocessed_data.png "Sample data plots")
+
+## 🎃 Model Architecture
+The U-Net architecture is used for segmentation. The `unet.py` contains the model architecture implemented in Tensorflow 2.x using the Keras API
+![UNet model architecture](u-net-architecture.png "UNet model architecture")
