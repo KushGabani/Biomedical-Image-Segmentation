@@ -11,7 +11,6 @@ def preprocess(directory, isX=False):
     for file in os.listdir(directory):
         if file.endswith(".tif"):
             image = tif.imread(os.path.join(directory, file)).astype(float)
-            image /= 255.
             data.append(image)
 
     if isX:
