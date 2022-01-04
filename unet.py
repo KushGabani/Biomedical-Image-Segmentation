@@ -66,7 +66,7 @@ class UpSamplingBlock(tf.keras.layers.Layer):
 
 class UNet(tf.keras.models.Model):
     def __init__(self, n_classes=1, filters=None, end_activation="sigmoid"):
-        super(UNet, self).__init__(name="UNet for semantic segmentation")
+        super(UNet, self).__init__(name="UNet-for-semantic-segmentation")
         self.filters = filters
         if not self.filters:
             self.filters = [64, 128, 256, 512]

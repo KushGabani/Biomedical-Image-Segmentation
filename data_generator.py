@@ -32,8 +32,8 @@ class DataGenerator(tf.keras.utils.Sequence):
 
         batch_x, batch_y = [], []
         for i in range(len(files_x)):
-            batch_x = tif.imread(os.path.join("data", "images", files_x[i]))
-            batch_y = tif.imread(os.path.join("data", "masks", files_y[i]))
+            batch_x.append(tif.imread(os.path.join("data", "images", files_x[i])))
+            batch_y.append(tif.imread(os.path.join("data", "masks", files_y[i])))
 
         batch_x = np.expand_dims(tf.keras.utils.normalize(np.array(batch_x), axis=1), 3)
         batch_y = np.expand_dims((np.array(batch_y)), 3) / 255.
